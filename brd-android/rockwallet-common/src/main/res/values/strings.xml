@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_coroutine_scope">view_scope</string>
+
+    <!-- This gets overridden in main string file -->
+    <string name="ErrorMessages.default" />
+    <string name="NoInternet.Title" />
+    <string name="NoInternet.Body" />
+    <string name="Button.Verify" />
+</resources>

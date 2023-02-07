@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="16dp"
+	android:backgroundTint="@color/light_background_03"
+	app:cardCornerRadius="12dp">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingHorizontal="16dp"
+		android:paddingBottom="16dp">
+
+		<androidx.appcompat.widget.AppCompatImageButton
+			android:id="@+id/btn_cancel"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/home_prompt_dismiss_btn_padding"
+			android:src="@drawable/ic_close_green_16dp"
+			android:layout_marginTop="16dp"
+			android:layout_marginBottom="8dp"
+			android:background="?attr/selectableItemBackground"
+			android:tint="@color/light_text_03"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/tv_title"
+			style="@style/TextStyle.Body2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="12dp"
+			android:text="@string/Account.FullAccess"
+			android:textColor="@color/light_text_01"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/btn_cancel" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/btn_verify_account"
+			style="@style/RockWalletButtonStyle.Dense"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="12dp"
+			android:text="@string/VerifyAccount.Button"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RockWallet.Button" parent="">
+        <item name="android:background">@drawable/b_rock_wallet_blue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAppearance">@style/TextStyle.Button</item>
+    </style>
+
+    <style name="RockWallet.Button.Washed">
+        <item name="android:background">@drawable/b_rock_wallet_blue_washed</item>
+    </style>
+
+    <style name="ChartPeriodButton" parent="TextStyle.Subtitle2">
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/bg_chart_period_button</item>
+        <item name="android:textColor">@color/text_color_chart_period_button</item>
+    </style>
+</resources>

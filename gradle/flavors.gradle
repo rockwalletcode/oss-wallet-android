@@ -1,0 +1,47 @@
+android {
+    final def isAppModule = project.getName() == "app"
+
+    flavorDimensions "environment"
+    productFlavors {
+        productionMainnet {
+            dimension "environment"
+            resValue "string", "app_name", "RockWallet"
+            buildConfigField "String", "SERVER_HOST", '"api.rockwallet.net"'
+            buildConfigField "boolean", "BITCOIN_TESTNET", "false"
+            buildConfigField "String", "DEFAULT_CLIENT_TOKEN", '"add token here"'
+            if (isAppModule) {
+                applicationId "com.rockwallet.app"
+            }
+        }
+        stagingMainnet {
+            dimension "environment"
+            resValue "string", "app_name", "RockWallet Stg Mainnet"
+            buildConfigField "String", "SERVER_HOST", '"api.stg.rockwallet.net"'
+            buildConfigField "boolean", "BITCOIN_TESTNET", "false"
+            buildConfigField "String", "DEFAULT_CLIENT_TOKEN", '"add token here"'
+            if (isAppModule) {
+                applicationId "com.rockwallet.app.stg.mainnet"
+            }
+        }
+        developmentMainnet {
+            dimension "environment"
+            resValue "string", "app_name", "RockWallet Dev Mainnet"
+            buildConfigField "String", "SERVER_HOST", '"api.dev.rockwallet.net"'
+            buildConfigField "boolean", "BITCOIN_TESTNET", "false"
+            buildConfigField "String", "DEFAULT_CLIENT_TOKEN", '"add token here"'
+            if (isAppModule) {
+                applicationId "com.rockwallet.app.dev.mainnet"
+            }
+        }
+        developmentTestnet {
+            dimension "environment"
+            resValue "string", "app_name", "RockWallet Dev Testnet"
+            buildConfigField "String", "SERVER_HOST", '"api.dev.rockwallet.net"'
+            buildConfigField "boolean", "BITCOIN_TESTNET", "true"
+            buildConfigField "String", "DEFAULT_CLIENT_TOKEN", 'add token here'
+            if (isAppModule) {
+                applicationId "com.rockwallet.app.dev.testnet"
+            }
+        }
+    }
+}

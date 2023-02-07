@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RockWalletTheme.Dialog.Alert" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/RockWalletTheme.Dialog.Alert.Title</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/RockWalletTheme.Dialog.Alert.Body</item>
+        <item name="buttonBarPositiveButtonStyle">@style/RockWalletTheme.Dialog.Alert.PositiveButton</item>
+    </style>
+
+    <style name="RockWalletTheme.Dialog.Alert.Title" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/rock_wallet_black</item>
+        <item name="android:textAppearance">@style/RockWalletTheme.Dialog.Alert.Title.Appearance</item>
+    </style>
+
+    <style name="RockWalletTheme.Dialog.Alert.Title.Appearance" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/mobile_font_medium</item>
+    </style>
+
+    <style name="RockWalletTheme.Dialog.Alert.Body" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">#8A000000</item>
+        <item name="android:textAppearance">@style/RockWalletTheme.Dialog.Alert.Body.Appearance</item>
+    </style>
+
+    <style name="RockWalletTheme.Dialog.Alert.Body.Appearance" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/mobile_font</item>
+    </style>
+
+    <style name="RockWalletTheme.Dialog.Alert.PositiveButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/rock_wallet_blue_700</item>
+    </style>
+
+    <style name="RockWalletGenericDialogStyle" parent="Theme.MaterialComponents.Light.Dialog.MinWidth">
+        <item name="dialogCornerRadius">16dp</item>
+        <item name="dialogPreferredPadding">24dp</item>
+    </style>
+
+    <style name="RockWalletButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textColor">@color/light_contrast_02</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">@style/TextStyle.Button</item>
+        <item name="rippleColor">@color/light_interaction_primary_pressed</item>
+        <item name="backgroundTint">@color/bg_button_tint</item>
+        <item name="cornerRadius">100dp</item>
+    </style>
+
+    <style name="RockWalletButtonStyle.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/light_primary</item>
+        <item name="android:textAppearance">@style/TextStyle.Button</item>
+        <item name="strokeColor">@color/light_primary</item>
+        <item name="rippleColor">@color/light_tertiary</item>
+        <item name="cornerRadius">100dp</item>
+    </style>
+
+    <style name="RockWalletButtonStyle.Outlined.Dense">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+    </style>
+
+    <style name="RockWalletButtonStyle.Icon">
+        <item name="iconTint">@color/light_contrast_02</item>
+        <item name="iconGravity">textStart</item>
+    </style>
+
+    <style name="RockWalletButtonStyle.Dense">
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:textAppearance">@style/TextStyle.Subtitle2</item>
+    </style>
+
+    <style name="RockWalletButtonStyleProfile">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textColor">@color/light_contrast_02</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">@style/TextStyle.Button</item>
+        <item name="rippleColor">@color/light_interaction_primary_pressed</item>
+        <item name="backgroundTint">@color/bg_button_tint</item>
+        <item name="cornerRadius">100dp</item>
+    </style>
+
+    <style name="RockWalletTextButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/light_secondary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">@style/TextStyle.Button</item>
+    </style>
+
+    <style name="RockWalletTextButtonStyle.Small">
+        <item name="android:textAppearance">@style/TextStyle.Subtitle2</item>
+        <item name="android:textColor">@color/light_text_03</item>
+    </style>
+
+    <style name="RockWalletBottomSheetTextButtonStyle" parent="RockWalletTextButtonStyle">
+        <item name="android:gravity">start</item>
+        <item name="paddingEnd">16dp</item>
+        <item name="paddingStart">16dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/light_text_01</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="RockWalletRadioButtonStyle" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="materialThemeOverlay">@style/RockWalletRadioButton.ThemeOverlay</item>
+        <item name="android:textColor">@color/light_text_01</item>
+        <item name="android:textAppearance">@style/TextStyle.Caption</item>
+    </style>
+
+    <style name="RockWalletRadioButton.ThemeOverlay" parent="">
+        <item name="colorOnSurface">@color/light_icons_01</item>
+        <item name="colorSecondary">@color/light_interaction_primary_focused</item>
+    </style>
+
+    <style name="RockWalletCardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="contentPadding">16dp</item>
+        <item name="cardCornerRadius">@dimen/radius_l</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cardElevation">36dp</item>
+        <item name="rippleColor">@color/rock_wallet_ripple_color</item>
+    </style>
+
+    <style name="RockWalletSnackBarStyle" parent="@style/Widget.MaterialComponents.Snackbar">
+        <item name="android:layout_margin">24dp</item>
+    </style>
+
+    <style name="RockWalletLoadingIndicatorStyle" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="android:indeterminate">true</item>
+        <item name="indicatorColor">@color/light_primary</item>
+    </style>
+
+    <style name="RockWalletLoadingIndicatorStyle.White">
+        <item name="indicatorColor">@color/white</item>
+    </style>
+
+    <style name="RockWalletTextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:foreground">@drawable/bg_input_view</item>
+        <item name="android:textColorHint">@color/light_text_01</item>
+        <item name="hintTextColor">@color/light_text_02</item>
+        <item name="hintTextAppearance">@style/TextStyle.Body3</item>
+        <item name="boxStrokeColor">@android:color/transparent</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxCollapsedPaddingTop">6dp</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="materialThemeOverlay">@style/RockWalletTextInputStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="RockWalletTextInputStyle.Collapsed">
+        <item name="android:foreground">@null</item>
+        <item name="expandedHintEnabled">false</item>
+        <item name="hintTextAppearance">@style/TextStyle.Subtitle2</item>
+    </style>
+
+    <style name="RockWalletTextInputStyle.Chevron">
+        <item name="endIconMode">custom</item>
+        <item name="endIconDrawable">@drawable/ic_chevron_down</item>
+    </style>
+
+    <style name="RockWalletTextInputStyle.ThemeOverlay" parent="ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="editTextStyle">@style/RockWalletEditTextStyle</item>
+    </style>
+
+    <style name="RockWalletEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:textAppearance">@style/TextStyle.Body2</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:paddingTop">22dp</item>
+    </style>
+
+    <style name="RockWalletEditTextStyle.RecoveryKeyInputStyle">
+        <item name="android:inputType">textNoSuggestions|textVisiblePassword</item>
+    </style>
+
+    <style name="RockWalletEditTextStyle.NoFloatingLabel">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textColorHint">@color/light_text_01</item>
+        <item name="android:textAppearance">@style/TextStyle.Body2</item>
+    </style>
+
+    <style name="RockWalletEditTextStyle.Clickable">
+        <item name="android:focusable">false</item>
+        <item name="android:cursorVisible">false</item>
+    </style>
+
+    <style name="RockWalletEditTextStyle.Collapsed">
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+
+    <style name="RockWalletToastTextAppearance.Error" parent="TextStyle.Body2">
+        <item name="android:textColor">@color/light_contrast_02</item>
+    </style>
+
+    <style name="RockWalletToastTextAppearance.Info" parent="TextStyle.Body2">
+        <item name="android:textColor">@color/light_text_03</item>
+    </style>
+
+    <style name="RockWalletSearchEditTextStyle">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/search_border</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:drawableStart">@drawable/ic_search_gray_18dp</item>
+        <item name="android:textColor">@color/light_text_01</item>
+        <item name="android:textColorHint">@color/light_text_01</item>
+        <item name="android:textAppearance">@style/TextStyle.Body2</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:maxEms">20</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="ConfirmButton" parent="@style/RockWalletButtonStyle.Dense">
+        <item name="height">48dp</item>
+        <item name="color">@color/light_primary</item>
+        <item name="android:textAppearance">@style/TextStyle.Subtitle1</item>
+    </style>
+
+    <style name="RockWalletCustomSwitchItemStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/text_color_rok_wallet_switch</item>
+        <item name="android:textAppearance">@style/TextStyle.Button</item>
+        <item name="android:background">@drawable/bg_switch_item</item>
+    </style>
+
+    <style name="RockWalletCustomCheckboxSytle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/light_text_03</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="RockWalletBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/RockWalletBottomSheetDialogStyle</item>
+    </style>
+
+    <style name="RockWalletBottomSheetDialogStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+    <style name="RockWalletToggleButtonStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_rw_toggle_button</item>
+        <item name="android:textAppearance">@style/TextStyle.Body2</item>
+        <item name="android:textColor">@color/text_rw_toggle_button</item>
+    </style>
+
+    <style name="SegmentedControl"/>
+
+    <style name="SegmentedControl.Container">
+        <item name="android:background">@drawable/bg_segmented_control_container</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="SegmentedControl.Button">
+        <item name="android:background">@drawable/bg_segmented_control_button</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/text_color_segmented_control_button</item>
+        <item name="android:textAppearance">@style/TextStyle.Button</item>
+    </style>
+</resources>

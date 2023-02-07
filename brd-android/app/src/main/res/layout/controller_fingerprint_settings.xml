@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/light_background_01">
+
+	<ImageButton
+		android:id="@+id/back_btn"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:layout_margin="@dimen/bread_margin"
+		android:background="?attr/toolbar_back_arrow"
+		android:backgroundTint="@color/light_text_03"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+
+	<ImageButton
+		android:id="@+id/faq_btn"
+		android:layout_width="@dimen/faq_dimen"
+		android:layout_height="@dimen/faq_dimen"
+		android:layout_margin="@dimen/bread_margin"
+		android:background="?attr/faq_button_primary_color"
+		android:backgroundTint="@color/light_text_03"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:id="@+id/imageView5"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/ic_fingerprint"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintDimensionRatio="1:1"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.25" />
+
+	<TextView
+		android:id="@+id/textView5"
+		style="@style/TextStyle.Body2"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginHorizontal="40dp"
+		android:layout_marginTop="32dp"
+		android:text="@string/FingerprintSettings.description"
+		android:textAlignment="center"
+		android:textColor="@color/light_text_02"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/imageView5" />
+
+	<com.google.android.material.switchmaterial.SwitchMaterial
+		android:id="@+id/switch_unlock_app"
+		style="@style/TextStyle.Body1"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginHorizontal="16dp"
+		android:layout_marginTop="32dp"
+		android:text="@string/FingerprintSettings.unlockApp"
+		android:textColor="@color/light_text_03"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+	<View
+		android:id="@+id/separator"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginTop="8dp"
+		android:background="@color/light_outline_01"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/switch_unlock_app"/>
+
+	<com.google.android.material.switchmaterial.SwitchMaterial
+		android:id="@+id/switch_send_money"
+		style="@style/TextStyle.Body1"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginHorizontal="16dp"
+		android:layout_marginTop="8dp"
+		android:text="@string/FingerprintSettings.sendMoney"
+		android:textColor="@color/light_text_03"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

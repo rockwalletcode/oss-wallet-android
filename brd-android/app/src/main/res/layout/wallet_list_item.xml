@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.breadwallet.legacy.presenter.customviews.ShimmerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shimmerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:clipToPadding="false">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/card_view_radius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/wallet_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/icon_container"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/token_icon_background_transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/TextStyle.Subtitle1"
+                    android:id="@+id/icon_letter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    tools:src="@drawable/ic_btc_icon"
+                    android:id="@+id/currency_icon_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                style="@style/TextStyle.Subtitle1"
+                android:id="@+id/wallet_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@+id/icon_container"
+                android:ellipsize="end"
+                android:maxWidth="180dp"
+                android:maxLines="1"
+                android:textColor="@color/light_text_03"
+                app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                app:layout_constraintStart_toEndOf="@+id/icon_container" tools:text="CryptoCurrency"/>
+
+            <TextView
+                style="@style/TextStyle.Subtitle2"
+                android:id="@+id/wallet_trade_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wallet_name"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@+id/icon_container"
+                android:textColor="@color/light_text_02"
+                app:layout_constraintStart_toEndOf="@+id/icon_container"
+                app:layout_constraintTop_toTopOf="@+id/guideline2" tools:text="$534.29"/>
+
+            <TextView
+                android:id="@+id/price_change"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_below="@id/wallet_name"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@+id/icon_container"
+                style="@style/TextStyle.Subtitle2"
+                app:layout_constraintStart_toEndOf="@+id/divider"
+                app:layout_constraintTop_toTopOf="@+id/guideline2" tools:text="4.32%"/>
+
+            <TextView
+                android:id="@+id/wallet_balance_fiat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                style="@style/TextStyle.Subtitle1"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/light_text_03"
+                app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="$12.00"/>
+
+            <TextView
+                style="@style/TextStyle.Subtitle2"
+                android:id="@+id/wallet_balance_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:textColor="@color/light_text_02"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="@+id/wallet_balance_fiat"
+                app:layout_constraintTop_toBottomOf="@+id/wallet_balance_fiat"
+                tools:text="0.07832 CC"
+                tools:visibility="visible" />
+
+            <ProgressBar
+                android:id="@+id/sync_progress"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_below="@id/wallet_balance_fiat"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="2dp"
+                android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/wallet_sync_progress_bar"
+                android:indeterminateTint="@color/rock_wallet_shuttle_grey"
+                android:keepScreenOn="true"
+                app:layout_constraintBottom_toBottomOf="@+id/syncing_label"
+                app:layout_constraintEnd_toEndOf="@+id/wallet_balance_fiat"
+                app:layout_constraintTop_toBottomOf="@+id/wallet_balance_fiat"/>
+
+            <TextView
+                tools:visibility="invisible"
+                android:id="@+id/syncing_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextStyle.Subtitle2"
+                android:layout_below="@id/wallet_balance_fiat"
+                android:layout_marginEnd="4dp"
+                android:layout_toStartOf="@id/sync_progress"
+                android:text="@string/SyncingView.syncing"
+                android:textColor="@color/light_text_02"
+                app:layout_constraintEnd_toStartOf="@+id/sync_progress"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/price_change"
+                app:layout_constraintTop_toBottomOf="@+id/wallet_balance_fiat"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.50"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white_transparent_25"
+                app:layout_constraintBottom_toBottomOf="@+id/wallet_trade_price"
+                app:layout_constraintStart_toEndOf="@+id/wallet_trade_price"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</com.breadwallet.legacy.presenter.customviews.ShimmerLayout>

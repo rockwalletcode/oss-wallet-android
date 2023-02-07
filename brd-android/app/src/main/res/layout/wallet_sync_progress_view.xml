@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/progress_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/toolbar_layout"
+    android:animateLayoutChanges="true"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    tools:showIn="@layout/controller_wallet">
+
+    <RelativeLayout
+        android:id="@+id/progress_layout_margins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/syncing_label"
+            style="@style/TextStyle.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:text="@string/SyncingView.syncing"
+            android:textColor="@color/light_text_02" />
+
+    </RelativeLayout>
+</LinearLayout>

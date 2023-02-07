@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
+    app:cardCornerRadius="@dimen/card_view_radius">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/light_background_cards"
+        android:layout_height="72dp">
+
+        <RelativeLayout
+            android:id="@+id/icon_parent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/token_icon_background_transparent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/icon_letter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/mobile_font_bold"
+                android:text="T"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/token_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:textColor="@color/light_text_03"
+            style="@style/TextStyle.Subtitle1"
+            tools:text="Token Name"
+            android:id="@+id/token_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@id/icon_parent"
+            android:textSize="18sp" />
+
+        <TextView
+            android:textColor="@color/light_text_02"
+            style="@style/TextStyle.Subtitle2"
+            tools:text="Token Symbol"
+            android:id="@+id/token_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/token_name"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/icon_parent" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/add_remove_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

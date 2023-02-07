@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="RockWalletAppTheme.RockWallet" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/light_primary</item>
+        <item name="colorPrimaryDark">@color/light_primary</item>
+        <item name="colorAccent">@color/light_primary</item>
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:textColor">@color/light_text_01</item>
+        <item name="textInputStyle">@style/RockWalletTextInputStyle</item>
+        <item name="radioButtonStyle">@style/RockWalletRadioButtonStyle</item>
+        <item name="materialButtonStyle">@style/RockWalletButtonStyle</item>
+        <item name="snackbarStyle">@style/RockWalletSnackBarStyle</item>
+        <item name="checkboxStyle">@style/RockWalletCustomCheckboxSytle</item>
+        <item name="materialCardViewStyle">@style/RockWalletCardViewStyle</item>
+        <item name="android:colorControlHighlight">@color/rock_wallet_ripple_color</item>
+        <item name="colorControlHighlight">@color/rock_wallet_ripple_color</item>
+        <item name="pin_pad_delete_src">@drawable/ic_rok_wallet_delete</item>
+    </style>
+
+</resources>

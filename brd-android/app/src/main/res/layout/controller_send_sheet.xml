@@ -1,0 +1,564 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutSendSheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSheetBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:animateLayoutChanges="true"
+        android:padding="0dp">
+
+        <include
+            android:id="@+id/loadingView"
+            layout="@layout/loading_overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/gray_shadow"
+            android:elevation="20dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="invisible" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/receive_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewStartAnchor"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/viewStartAnchor"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/labelTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <ImageButton
+            android:id="@+id/buttonClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/ic_dismiss"
+            android:backgroundTint="@color/light_text_03"
+            app:layout_constraintBottom_toBottomOf="@+id/labelTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/labelTitle" />
+
+        <TextView
+            android:id="@+id/labelTitle"
+            style="@style/TextStyle.Title6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/Send.title"
+            android:textColor="@color/light_text_03"
+            app:layout_constraintBottom_toTopOf="@+id/separator0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewStartAnchor"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageButton
+            android:id="@+id/buttonFaq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/labelTitle"
+            android:layout_alignBottom="@+id/labelTitle"
+            android:layout_marginEnd="16dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/faq_question_black"
+            android:backgroundTint="@color/light_text_03"
+            app:layout_constraintBottom_toBottomOf="@+id/labelTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/labelTitle"
+            app:layout_constraintTop_toTopOf="@+id/labelTitle" />
+
+        <View
+            android:id="@+id/separator0"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light_outline_01"
+            app:layout_constraintBottom_toTopOf="@+id/inputLayoutAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelTitle" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutAddress"
+            style="@style/RockWalletTextInputStyle.Collapsed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/separator"
+            app:layout_constraintEnd_toStartOf="@+id/buttonPaste"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputAddress"
+                style="@style/RockWalletEditTextStyle.Collapsed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ellipsize="middle"
+                android:ems="10"
+                android:hint="@string/Send.toLabel"
+                android:imeOptions="flagNoPersonalizedLearning"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/addressProgressBar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="@dimen/bread_margin"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="@+id/inputLayoutAddress"
+            app:layout_constraintEnd_toEndOf="@+id/inputLayoutAddress"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/inputLayoutAddress"
+            app:layout_constraintTop_toTopOf="@+id/inputLayoutAddress" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonPaste"
+            style="@style/RockWalletButtonStyle.Outlined.Dense"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="0.7"
+            android:text="@string/Send.pasteLabel"
+            app:layout_constraintTop_toTopOf="@+id/buttonScan"
+            app:layout_constraintEnd_toStartOf="@+id/buttonScan"
+            app:layout_constraintStart_toEndOf="@+id/inputLayoutAddress"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonScan"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonScan"
+            style="@style/RockWalletButtonStyle.Outlined.Dense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="0.7"
+            app:icon="@drawable/ic_qr_code"
+            app:iconTint="@color/light_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/inputLayoutAddress"/>
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_outline_01"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/inputLayoutDestinationTag"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutAddress" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutDestinationTag"
+            style="@style/RockWalletTextInputStyle.Collapsed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputDestinationTag"
+                style="@style/RockWalletEditTextStyle.Collapsed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="@string/Send.destinationTag"
+                android:imeOptions="flagNoPersonalizedLearning"
+                android:inputType="numberSigned|textNoSuggestions"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/buttonFaqDestination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/bread_margin"
+            android:background="@drawable/faq_question_black"
+            app:layout_constraintBottom_toBottomOf="@+id/separator1"
+            app:layout_constraintEnd_toEndOf = "parent"
+            app:layout_constraintTop_toTopOf="@+id/separator"
+            app:layout_constraintStart_toStartOf = "parent"
+            app:layout_constraintHorizontal_bias = "1.0" />
+
+        <View
+            android:id="@+id/separator1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_outline_01"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/inputLayoutHederaMemo"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutDestinationTag" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutHederaMemo"
+            style="@style/RockWalletTextInputStyle.Collapsed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputHederaMemo"
+                style="@style/RockWalletEditTextStyle.Collapsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/Send.memoTag_optional"
+                android:imeOptions="flagNoPersonalizedLearning"
+                android:inputType="text|textNoSuggestions"
+                android:maxLength="100"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:id="@+id/separator5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_outline_01"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/inputLayoutAmount"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutHederaMemo" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutAmount"
+            style="@style/RockWalletTextInputStyle.Collapsed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/Send.amountLabel"
+            app:layout_constraintBottom_toTopOf="@+id/labelBalance"
+            app:layout_constraintEnd_toStartOf="@+id/buttonCurrencySelect"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator5">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputAmount"
+                style="@style/RockWalletEditTextStyle.Collapsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:cursorVisible="false"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:inputType="numberDecimal"
+                android:textIsSelectable="false" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/labelBalance"
+            style="@style/TextStyle.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/light_text_02"
+            app:layout_constraintBottom_toTopOf="@+id/labelNetworkFee"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutAmount"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Current Balance: "
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/labelBalanceValue"
+            style="@style/TextStyle.Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:textColor="@color/light_text_02"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintEnd_toStartOf="@id/button_xrp_balance_info"
+            app:layout_constraintBottom_toBottomOf="@+id/labelBalance"
+            app:layout_constraintStart_toEndOf="@+id/labelBalance"
+            app:layout_constraintTop_toTopOf="@+id/labelBalance"
+            tools:text="1.0024312 BTC" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button_xrp_balance_info"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_exclamation_circle"
+            android:tint="@color/light_primary"
+            android:scaleType="fitXY"
+            android:layout_marginStart="2dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@+id/labelBalanceValue"
+            app:layout_constraintEnd_toEndOf="@+id/inputLayoutAmount"
+            app:layout_constraintStart_toEndOf="@+id/labelBalanceValue"
+            app:layout_constraintTop_toTopOf="@+id/labelBalanceValue" />
+
+        <TextView
+            android:id="@+id/labelNetworkFee"
+            style="@style/TextStyle.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/light_text_02"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/layoutFeeOption"
+            app:layout_constraintEnd_toEndOf="@+id/inputLayoutAmount"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelBalance"
+            app:layout_goneMarginBottom="8dp"
+            tools:text="Network Fee:"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/labelNetworkFeeValue"
+            style="@style/TextStyle.Subtitle2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:textColor="@color/light_text_02"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/labelNetworkFee"
+            app:layout_constraintStart_toEndOf="@+id/labelNetworkFee"
+            app:layout_constraintTop_toTopOf="@+id/labelNetworkFee"
+            tools:text="500 BTC"
+            tools:visibility="visible" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCurrencySelect"
+            style="@style/RockWalletButtonStyle.Outlined.Dense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/inputLayoutAmount"
+            tools:text="iso" />
+
+        <View
+            android:id="@+id/separatorFee"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/light_outline_01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelNetworkFee" />
+
+        <LinearLayout
+            android:id="@+id/layoutFeeOption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="2.0"
+            app:layout_constraintBottom_toTopOf="@+id/keyboard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separatorFee"
+            tools:visibility="visible">
+
+            <TextView
+                style="@style/TextStyle.Subtitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/FeeSelector.title"
+                android:textColor="@color/light_text_02" />
+
+            <LinearLayout
+                android:id="@+id/layoutFeeButtons"
+                android:background="@drawable/bg_rw_toggle_container"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:padding="2dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:weightSum="3.0">
+
+                <TextView
+                    android:id="@+id/buttonEconomy"
+                    style="@style/RockWalletToggleButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="@string/FeeSelector.economy"
+                    android:layout_marginEnd="2dp"/>
+
+                <TextView
+                    android:id="@+id/buttonRegular"
+                    style="@style/RockWalletToggleButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="@string/FeeSelector.regular"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginStart="2dp"/>
+
+                <TextView
+                    android:id="@+id/buttonPriority"
+                    style="@style/RockWalletToggleButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="@string/FeeSelector.priority"
+                    android:layout_marginStart="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/labelFeeDescription"
+                style="@style/TextStyle.Body3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/light_text_02" />
+
+            <TextView
+                android:id="@+id/labelFeeWarning"
+                style="@style/TextStyle.Body3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/FeeSelector.economyWarning"
+                android:textColor="@color/light_error_1" />
+        </LinearLayout>
+
+        <com.breadwallet.legacy.presenter.customviews.BRKeyboard
+            android:id="@+id/keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/inputLayoutMemo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutFeeOption" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutMemo"
+            style="@style/RockWalletTextInputStyle.Collapsed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp"
+            app:counterMaxLength="250"
+            app:layout_constraintBottom_toTopOf="@+id/separator4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/keyboard">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputMemo"
+                style="@style/RockWalletEditTextStyle.Collapsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/Send.descriptionLabel"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLength="250"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:id="@+id/separator4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_outline_01"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonSend"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutMemo" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSend"
+            style="@style/RockWalletButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/Send.sendLabel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator4" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupAmountSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="keyboard" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupDestinationTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="separator,inputLayoutDestinationTag, buttonFaqDestination"
+            tools:visibility="visible"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupHederaMemo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="separator1,inputLayoutHederaMemo"
+            tools:visibility="visible"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/layoutTransactionDetails"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:animateLayoutChanges="true">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tx_details_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="16dp"
+        android:minWidth="330dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/light_background_cards">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/details_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    style="@style/TextStyle.Title6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/light_text_03"
+                    tools:text="Send" />
+
+                <ImageButton
+                    android:id="@+id/btn_close"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/tv_title"
+                    android:layout_alignBottom="@+id/tv_title"
+                    android:background="@drawable/ic_dismiss" />
+
+                <View
+                    android:id="@+id/view_title_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tv_title"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/light_outline_01" />
+
+                <TextView
+                    android:id="@+id/tv_amount"
+                    style="@style/TextStyle.Title5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view_title_divider"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/light_secondary"
+                    tools:text="-0.10965 BTC"/>
+
+                <TextView
+                    android:id="@+id/tv_label_when_sent"
+                    style="@style/TextStyle.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_amount"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/light_text_02"
+                    tools:text="12.22 USD" />
+
+                <TextView
+                    android:id="@+id/tv_amount_now"
+                    style="@style/TextStyle.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_amount"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="2dp"
+                    android:textColor="@color/light_text_02"
+                    tools:text="X"/>
+
+                <TextView
+                    android:id="@+id/tv_tx_status"
+                    style="@style/TextStyle.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_label_when_sent"
+                    android:layout_marginTop="16dp"
+                    android:drawableStart="@drawable/checkmark_circled"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/light_text_02" />
+
+                <TextView
+                    android:id="@+id/tv_tx_title"
+                    style="@style/TextStyle.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_label_when_sent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="20dp"
+                    android:textColor="@color/light_text_02"
+                    tools:text="Yesterday at 12:53 PM" />
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tv_tx_title"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/light_outline_01" />
+
+                <TextView
+                    android:id="@+id/tv_tx_to_from"
+                    style="@style/TextStyle.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/divider2"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/light_text_02"
+                    tools:text="@string/TransactionDetails.addressToHeader" />
+
+                <TextView
+                    android:id="@+id/tv_tx_to_from_address"
+                    style="@style/TextStyle.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/divider2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@+id/tv_tx_to_from"
+                    android:ellipsize="middle"
+                    android:gravity="end"
+                    android:paddingStart="16dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/light_text_02"/>
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tv_tx_to_from_address"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/light_outline_01" />
+
+                <TextView
+                    android:id="@+id/tv_memo_label"
+                    style="@style/TextStyle.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/divider3"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/TransactionDetails.commentsHeader"
+                    android:textColor="@color/light_text_02" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_memo_input"
+                    style="@style/RockWalletEditTextStyle.NoFloatingLabel"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/divider3"
+                    android:layout_alignParentEnd="true"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="0dp"
+                    android:layout_toEndOf="@id/tv_memo_label"
+                    android:background="@android:color/transparent"
+                    android:gravity="end"
+                    android:hint="@string/TransactionDetails.commentsPlaceholder"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="16dp"
+                    android:textColor="@color/light_text_02"
+                    android:textColorHint="@color/light_text_02"/>
+
+                <View
+                    android:id="@+id/memo_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/et_memo_input"
+                    android:background="@color/light_outline_01" />
+
+                <LinearLayout
+                    android:id="@+id/details_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/memo_divider"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutDestinationTag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tv_destination_tag_label"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/TransactionDetails.destinationTag"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_destination_tag_value"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="8dp"
+                            android:ellipsize="middle"
+                            android:gravity="end"
+                            android:singleLine="true"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_destination_tag_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/tv_destination_tag_label"
+                            app:layout_constraintTop_toTopOf="@+id/tv_destination_tag_label"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/destination_tag_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_outline_01"
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutHederaMemo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tv_hedera_memo_label"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/TransactionDetails.hederaMemo"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_hedera_memo_value"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="8dp"
+                            android:ellipsize="middle"
+                            android:gravity="end"
+                            android:singleLine="true"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_hedera_memo_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/tv_hedera_memo_label"
+                            app:layout_constraintTop_toTopOf="@+id/tv_hedera_memo_label"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/hedera_memo_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_outline_01"
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/gas_price_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_gas_price_label"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/TransactionDetails.gasPriceHeader"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_gas_price"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text=""
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_gas_price_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_gas_price_label"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/gas_price_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_outline_01"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/gas_limit_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_gas_limit_label"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/TransactionDetails.gasLimitHeader"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_gas_limit"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text=""
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_gas_limit_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_gas_limit_label"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/gas_limit_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_outline_01"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fee_primary_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_fee_primary_label"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/Confirmation.feeLabel"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_fee_primary"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text=""
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_fee_primary_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_fee_primary_label"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/fee_primary_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_outline_01"
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fee_secondary_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_fee_secondary_label"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/Confirmation.amountLabel"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_fee_secondary"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_fee_secondary_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_fee_secondary_label"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/fee_secondary_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_outline_01"
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_exchange_rate_label"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/Transaction.exchangeOnDaySent"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_exchange_rate"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_exchange_rate_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_exchange_rate_label"/>
+
+                        <View
+                            android:id="@+id/divider6"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/light_outline_01"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            tools:visibility="visible"/>
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/groupExchangeRateSection"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:constraint_referenced_ids="divider6,tv_exchange_rate_label,tv_exchange_rate"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/confirmed_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_confirmed_in_block_label"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/TransactionDetails.blockHeightLabel"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_confirmed_in_block_number"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_confirmed_in_block_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_confirmed_in_block_label"
+                            tools:text="549293"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/confirmed_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_outline_01"
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/confirmations_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_confirmations_label"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/TransactionDetails.confirmationsLabel"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_confirmations_value"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_confirmations_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_confirmations_label"
+                            tools:text="3"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/confirmations_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_outline_01"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_transaction_id_label"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/TransactionDetails.txHashHeader"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_transaction_id"
+                            style="@style/TextStyle.Body2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="8dp"
+                            android:ellipsize="middle"
+                            android:gravity="end"
+                            android:singleLine="true"
+                            android:textColor="@color/light_text_02"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_transaction_id_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/tv_transaction_id_label"
+                            app:layout_constraintTop_toTopOf="@+id/tv_transaction_id_label"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/divider8"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_outline_01" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_show_hide_details"
+                    style="@style/RockWalletTextButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/details_container"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/TransactionDetails.showDetails" />
+            </RelativeLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

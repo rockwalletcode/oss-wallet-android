@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/light_background_01">
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:fillViewport="true"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<androidx.appcompat.widget.AppCompatImageButton
+				android:id="@+id/btn_dismiss"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:layout_marginEnd="16dp"
+				android:background="?attr/selectableItemBackgroundBorderless"
+				android:src="@drawable/ic_rok_wallet_dismiss"
+				android:tint="@color/light_text_01"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/iv_header"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="16dp"
+				android:layout_marginTop="90dp"
+				android:src="@drawable/ic_registration_step_2"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/btn_dismiss" />
+
+			<TextView
+				android:id="@+id/tv_title"
+				style="@style/TextStyle.Title6"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="40dp"
+				android:text="@string/AccountCreation.VerifyEmail"
+				android:textColor="@color/light_text_03"
+				app:layout_constrainedWidth="true"
+				app:layout_constraintEnd_toEndOf="@id/btn_confirm"
+				app:layout_constraintHorizontal_bias="0"
+				app:layout_constraintStart_toStartOf="@id/btn_confirm"
+				app:layout_constraintTop_toBottomOf="@id/iv_header" />
+
+			<TextView
+				android:id="@+id/tv_subtitle"
+				style="@style/TextStyle.Body2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:lineSpacingExtra="5sp"
+				android:text="@string/AccountCreation.EnterCode"
+				android:textColor="@color/light_text_02"
+				app:layout_constrainedWidth="true"
+				app:layout_constraintEnd_toEndOf="@id/btn_confirm"
+				app:layout_constraintHorizontal_bias="0"
+				app:layout_constraintStart_toStartOf="@id/btn_confirm"
+				app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+			<com.rockwallet.registration.ui.views.EnterCodeView
+				android:id="@+id/view_enter_code"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="24dp"
+				app:layout_constrainedWidth="true"
+				app:layout_constraintEnd_toEndOf="@id/btn_confirm"
+				app:layout_constraintStart_toStartOf="@id/btn_confirm"
+				app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
+
+			<TextView
+				android:id="@+id/tv_code_error"
+				style="@style/TextStyle.Body3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="8dp"
+				android:text="@string/InputView.InvalidCode"
+				android:textColor="@color/light_error"
+				app:layout_constraintStart_toStartOf="@id/view_enter_code"
+				app:layout_constraintTop_toBottomOf="@id/view_enter_code" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/btn_resend"
+				style="@style/RockWalletTextButtonStyle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="12dp"
+				android:layout_marginBottom="32dp"
+				android:text="@string/AccountCreation.ResendCode"
+				android:textColor="@color/light_secondary"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/tv_code_error"
+				app:layout_constraintVertical_bias="0" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/btn_change_email"
+				style="@style/RockWalletTextButtonStyle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginEnd="16dp"
+				android:text="@string/AccountCreation.ChangeEmail"
+				android:textColor="@color/light_secondary"
+				app:layout_constraintBottom_toBottomOf="@id/btn_resend"
+				app:layout_constraintHorizontal_bias="0"
+				app:layout_constraintStart_toEndOf="@id/btn_resend"
+				app:layout_constraintTop_toTopOf="@id/btn_resend" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/btn_confirm"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="16dp"
+				android:layout_marginVertical="24dp"
+				android:text="@string/Button.confirm"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/btn_resend"
+				app:layout_constraintVertical_bias="1" />
+
+			<include
+				android:id="@+id/view_completed"
+				layout="@layout/view_rockwallet_completed"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:elevation="10dp"
+				android:visibility="gone"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				tools:visibility="visible" />
+
+			<include
+				android:id="@+id/view_loading"
+				layout="@layout/view_rockwallet_loading"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:elevation="10dp"
+				android:visibility="gone"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				tools:visibility="visible" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:filterTouchesWhenObscured="true"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_word"
+        style="@style/TextStyle.Title2"
+        android:layout_width="wrap_content"
+        android:layout_height="96dp"
+        android:minWidth="220dp"
+        android:layout_centerInParent="true"
+        android:clickable="false"
+        android:focusable="false"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/light_text_01" />
+
+</RelativeLayout>
